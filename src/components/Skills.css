@@ -1,0 +1,14 @@
+.skills-section {
+    height: fit-content;
+    background: orange;
+}
+
+.skills-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-text > h3 {
+    font-family: monospace;
+}
