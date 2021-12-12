@@ -7,7 +7,6 @@ import Intro from "./components/Intro"
 import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import AboutMe from "./components/AboutMe"
-import { useScrollBlock } from "./components/useScrollBlock"
 
 import { useEffect, useState } from "react"
 import { PacmanLoader } from "react-spinners"
