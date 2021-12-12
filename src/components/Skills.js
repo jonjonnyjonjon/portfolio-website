@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material"
-import "./Skills.css"
+import { Grid, Typography } from "@mui/material"
+import { FaReact, FaNodeJs, FaPython } from "react-icons/fa"
 
 const Skills = () => {
     return (
@@ -9,7 +9,21 @@ const Skills = () => {
                     skills;    
                 </Typography>
             </div>
-        </section>
+
+            <div className="skills-box">
+                <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center">
+                    <Grid item>
+                        <FaReact size={100} /> ReactJS
+                    </Grid>
+                    <Grid item>
+                        <FaNodeJs size={100} /> NodeJS
+                    </Grid>
+                    <Grid item>
+                        <FaPython size={100} /> Python
+                    </Grid>
+                </Grid>
+            </div>
+    </section>
     )
 }
 

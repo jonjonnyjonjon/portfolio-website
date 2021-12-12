@@ -6,6 +6,9 @@ import Navbar from "./components/Navbar"
 import Intro from "./components/Intro"
 import Skills from "./components/Skills"
 import Projects from "./components/Projects"
+import AboutMe from "./components/AboutMe"
+import { useScrollBlock } from "./components/useScrollBlock"
+
 import { useEffect, useState } from "react"
 import { PacmanLoader } from "react-spinners"
 
@@ -28,7 +31,7 @@ const App = () => {
 	// 	iframe.src = "data:text/html;charset=utf-8," + encodeURI(html)
 	// }
 	const [fadeProp, setFadeProp] = useState({ fade: "fade-in" });
-	const [loadingPosition, setLoadingPosition] = useState(1)
+	const [loadingPosition, setLoadingPosition] = useState(10000)
 
 	useEffect(() => {
 		setInterval(() => {
@@ -48,7 +51,8 @@ const App = () => {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
-		zIndex: loadingPosition
+		zIndex: loadingPosition,
+        overflow: "hidden"
 	}
 
 	const moveBehind = () => {
@@ -63,7 +67,14 @@ const App = () => {
 
 			<Navbar />
 			<Intro />
+
+            <hr className="divider-line"/>
+            <AboutMe />
+
+            <hr className="divider-line"/>
 			<Skills />
+
+            <hr className="divider-line"/>
 			<Projects />
 			{/* <Grid container spacing={2} sx={{mt: 1, mb: 1}}>
 				<Grid item sm={6}>

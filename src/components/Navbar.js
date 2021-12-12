@@ -1,16 +1,10 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from '@mui/material';
+import MenuIcon from "@mui/icons-material/Menu"
+import { Link } from '@mui/material';
+import jwLogo  from "../img/jw-logo.png"
 
-const pages = ['About me', 'Skills', 'Projects'];
+const pages = [['About me',"#intro-section"], ['Skills', "#skills-section"], ['Projects', "#projects-section"]];
 
 
 const Navbar = () => {
@@ -25,7 +19,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<AppBar position="static" style={{ background: "white", color: "black" }}>
+		<AppBar position="sticky" style={{ background: "white", color: "black" }}>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography
@@ -34,7 +28,7 @@ const Navbar = () => {
 						component="div"
 						sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
 					>
-						LOGO
+						<img src={jwLogo} alt="jw logo" width="100" />
 					</Typography>
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -67,9 +61,11 @@ const Navbar = () => {
 							}}
 						>
 							{pages.map((page) => (
-								<MenuItem key={page} onClick={handleCloseNavMenu}>
-									<Typography textAlign="center">{page}</Typography>
-								</MenuItem>
+                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                    <Link href={page[1]}>
+                                        <Typography textAlign="center">{page[0]}</Typography>
+                                    </Link>
+                                </MenuItem>
 							))}
 						</Menu>
 					</Box>
@@ -82,13 +78,14 @@ const Navbar = () => {
 						LOGO
 					</Typography>
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-						{pages.map((page) => (
+						{pages.map(page => (
 							<Button
 								key={page}
 								onClick={handleCloseNavMenu}
 								sx={{ my: 2, color: 'black', display: 'block' }}
+                                href={page[1]}
 							>
-								{page}
+								{page[0]}
 							</Button>
 						))}
 					</Box>
