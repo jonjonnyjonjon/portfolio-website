@@ -5,21 +5,19 @@ const Skills = () => {
     return (
         <section className="skills-section" id="skills-section">
             <div className="skills-text">
-                <Typography variant="h3">
-                    skills;    
-                </Typography>
+                <h1>skills;</h1>
             </div>
 
             <div className="skills-box">
                 <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center">
                     <Grid item>
-                        <FaReact size={100} /> ReactJS
+                        <FaReact className="fareact" /> ReactJS
                     </Grid>
                     <Grid item>
-                        <FaNodeJs size={100} /> NodeJS
+                        <FaNodeJs className="fanodejs" /> NodeJS
                     </Grid>
                     <Grid item>
-                        <FaPython size={100} /> Python
+                        <FaPython className="fapython" /> Python
                     </Grid>
                 </Grid>
             </div>

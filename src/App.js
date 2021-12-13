@@ -69,12 +69,12 @@ const App = () => {
 
             <hr className="divider-line"/>
             <AboutMe />
-
             <hr className="divider-line"/>
 			<Skills />
 
             <hr className="divider-line"/>
 			<Projects />
+
 			{/* <Grid container spacing={2} sx={{mt: 1, mb: 1}}>
 				<Grid item sm={6}>
 					<div className="editorBox" contentEditable style={editorBoxStyle}>

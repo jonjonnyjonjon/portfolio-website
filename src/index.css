@@ -4,8 +4,6 @@ body {
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -19,22 +17,16 @@ html {
 }
 
 /* All */
-.intro-section, .projects-section {
-    padding: 2rem 5rem 0 5rem;
+.aboutme-section, .skills-section, .projects-section {
+    padding: 1.5em;
+}
+
+.intro-section {
     height: 90vh;
 }
 
-.aboutme-section {
-    padding: 2rem 5rem 0 5rem;
-    height: 40vh;
-}
-
-.skills-section {
-    padding: 2rem 5rem 0 5rem;
-    height: 20vh;
-}
-
-h3 {
+h1 {
+    margin: 0;
     font-family: monospace !important;
 }
 
@@ -44,8 +36,6 @@ h3 {
     display: block;
     line-height: 1.6em;
 }
-
-
 
 /* Intro.js */
 .intro-section {
@@ -97,7 +87,7 @@ h3 {
     justify-items: center;
     align-items: center;
     flex-direction: column;
-    height: 40vh;
+    /* height: 40vh; */
 }
 
 .terminal {
@@ -176,7 +166,6 @@ code {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 1rem;
 }
 
 /* Projects.js */
@@ -188,12 +177,10 @@ code {
     margin-bottom: 1rem;
 }
 
-.projects.wrapper {
-    position: absolute;
-}
-
-img {
+.projects-wrapper img {
     border-radius: 15px;
+    width: 100%;
+    height: auto;
 }
 
 .project-card {
@@ -203,4 +190,26 @@ img {
 .project-card-badges {
     display: flex;
     justify-content: space-between;
+}
+
+/* Mobile CSS */
+@media screen and (max-width: 375px) {
+    body {
+        font-size: 16px;
+    }
+
+    .fareact, .fanodejs, .fapython {
+        font-size: 3em;
+    }
+}
+
+/* Tablet CSS */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+
+    .fareact, .fanodejs, .fapython {
+        font-size: 4em;
+    }
 }

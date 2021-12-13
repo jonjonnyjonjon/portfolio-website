@@ -6,14 +6,11 @@ const Skills = () => {
     return (
         <section className="aboutme-section" id="aboutme-section">
             <div className="aboutme-text">
-                <Typography variant="h3">
-                    about me;    
-                </Typography>
+                <h1>about me;</h1>
             </div>
 
-            <div>
-                <InfoTerminal />
-            </div>
+            <InfoTerminal />
+
         </section>
     )
 }

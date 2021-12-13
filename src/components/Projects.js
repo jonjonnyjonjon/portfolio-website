@@ -13,13 +13,8 @@ const Projects = () => {
         <section className="projects-section" id="projects-section">
             <div className="projects-wrapper">
                 <div className="projects-text">
-                    <Typography variant="h3">
-                        projects done;
-                    </Typography>
-
-                    <Typography variant="h6">
-                        Here are a few projects I have done.
-                    </Typography>
+                    <h1>projects done;</h1> 
+                    <span>Here are a few projects I have done.</span>
                 </div>
                 {/* <Grid container spacing={2}>
                     <Grid item xs={12} md={4}>

@@ -6,10 +6,7 @@ const Intro = () => {
     return (
         <section className="intro-section" id="intro-section">
             <div style={{textAlign: "center"}}>
-                <Typography variant="h3" className="greeting">
-                    hello world;
-                </Typography>
-
+                <h1 className="greeting">hello world;</h1>
             </div>
             
             <div style={{textAlign: "center"}}>
