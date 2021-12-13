@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material"
+import { Grid } from "@mui/material"
 import { FaReact, FaNodeJs, FaPython } from "react-icons/fa"
 
 const Skills = () => {

@@ -1,5 +1,3 @@
-import { Typography } from "@mui/material"
-
 import InfoTerminal from "./InfoTerminal"
 
 const Skills = () => {
