@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import PixelAvatar from "../img/pixel_me.png";
+import PixelAvatar from "../images/pixel_me.png";
 
 const Intro = () => {
 	const bg = useColorModeValue(

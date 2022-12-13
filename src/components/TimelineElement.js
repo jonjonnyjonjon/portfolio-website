@@ -1,25 +1,25 @@
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { MdWork } from "react-icons/md";
-import { HStack, Image, VStack } from "@chakra-ui/react";
+import { Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
 
 const TimelineElement = ({ item }) => {
 	return (
 		<VerticalTimelineElement
 			className="vertical-timeline-element--work"
-			contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-			contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+			contentStyle={{ background: item.bgColor, color: item.accentColor }}
+			contentArrowStyle={{ borderRight: `7px solid ${item.bgColor}` }}
 			date={item.duration}
-			iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+			iconStyle={{ background: item.bgColor, color: item.accentColor }}
 			icon={<MdWork />}
 		>
 			<HStack>
-				<Image src="" alt="" />
+				<Image src={item.image} alt="" w="20" />
 				<VStack align="left">
-					<h3 className="vertical-timeline-element-title">{item.title}</h3>
-					<h4 className="vertical-timeline-element-subtitle">{item.country}</h4>
+					<Heading sx={{color: `${item.accentColor} !important`}}>{item.title}</Heading>
+					<Text>{item.country}</Text>
 				</VStack>
 			</HStack>
-			<p>{item.description}</p>
+			<Text>{item.description}</Text>
 		</VerticalTimelineElement>
 	);
 };

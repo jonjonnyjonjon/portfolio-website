@@ -2,35 +2,47 @@ import { Box, Heading } from "@chakra-ui/react";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import TimelineElement from "./TimelineElement";
+import TikTokLogo from "../images/TikTok logo.png"
+import ContinentalLogo from "../images/Continental logo.png"
+import AccentureLogo from "../images/Accenture logo.png";
+import SMULogo from "../images/SMU logo.png";
 
 const items = [
 	{
-		image: "Continental",
+		image: ContinentalLogo,
 		title: "Data Analyst Intern",
 		country: "Singapore",
 		duration: "Jun 2020 - Aug 2020",
 		description: "Lorem",
+		bgColor: "black",
+		accentColor: "#FF9900",
 	},
 	{
-		image: "TiKTok",
+		image: TikTokLogo,
 		title: "Software Engineer Intern",
 		country: "Singapore",
 		duration: "May 2022 - Aug 2022",
 		description: "Lorem Ipsum",
+		bgColor: "black",
+		accentColor: "white",
 	},
 	{
-		image: "TiKTok",
+		image: AccentureLogo,
 		title: "Software Engineer Intern",
 		country: "Singapore",
 		duration: "May 2022 - Aug 2022",
 		description: "Lorem Ipsum",
+		bgColor: "#9708FE",
+		accentColor: "white",
 	},
 	{
-		image: "TiKTok",
-		title: "Software Engineer Intern",
+		image: SMULogo,
+		title: "Student",
 		country: "Singapore",
-		duration: "May 2022 - Aug 2022",
+		duration: "Aug 2019 - May 2023",
 		description: "Lorem Ipsum",
+		bgColor: "white",
+		accentColor: "#0F2B72",
 	},
 ];
 
