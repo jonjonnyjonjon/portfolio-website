@@ -1,102 +1,108 @@
-// import { Card, CardContent, Grid, Typography } from "@mui/material"
-// import SkillBadge from "./SkillBadge"
+import { FaPython, FaJava, FaGithub } from "react-icons/fa";
+import { GrMysql } from "react-icons/gr";
+import {
+  SiSpringboot,
+	SiHibernate,
+	SiApachemaven,
+	SiThymeleaf,
+	SiRabbitmq,
+	SiJinja,
+} from "react-icons/si";
+import {
+  Box,
+	Card,
+	CardBody,
+	CardFooter,
+	Heading,
+	Image,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
+import SkillBadge from "./SkillBadge";
+import DoransInn from "../images/dorans-inn.png";
+import Antbuildz from "../images/antbuildz.png";
 
-// import DoransInn from "../img/dorans-inn.png"
-// import Antbuildz from "../img/antbuildz.png"
+const Projects = () => {
+	return (
+		<Box h="50vh" p={5}>
+			<Heading mb={5}>Projects</Heading>
 
-// import { FaPython, FaJava, FaGithub } from "react-icons/fa";
-// import { GrMysql } from "react-icons/gr"
-// import { SiSpringboot, SiHibernate, SiApachemaven, SiThymeleaf, SiRabbitmq, SiJinja } from "react-icons/si"
+			<Card
+				direction={{ base: "column", sm: "row" }}
+				overflow="hidden"
+				variant="outline"
+			>
+				<Image
+					objectFit="cover"
+					maxW={{ base: "100%", sm: "200px" }}
+					src={DoransInn}
+					alt="Doran's Inn"
+				/>
 
-// const Projects = () => {
-//     return (
-//         <section className="projects-section" id="projects-section">
-//             <div className="projects-wrapper">
-//                 <div className="projects-text">
-//                     <h1>projects done;</h1> 
-//                     <span>Here are a few projects I have done.</span>
-//                 </div>
-//                 {/* <Grid container spacing={2}>
-//                     <Grid item xs={12} md={4}>
-//                         <ProjCard img={DoransInn}/>
-//                     </Grid>
-//                     <Grid item xs={12} md={4}>
-//                         <ProjCard img={Antbuildz}/>
-//                     </Grid>
-//                     <Grid item xs={12} md={4}>
-//                         <ProjCard />
-//                     </Grid>
-//                 </Grid> */}
-//                 <Grid container className="project-card" direction="row" justifyContent="center" alignItems="center">
-//                     <Grid item md={5}>
-//                         <img src={DoransInn} alt="DoransInn logo" />
-//                     </Grid>
-//                     <Grid item md={7}>
-//                         <Card style={{ boxShadow: "12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 100px 100px 80px rgba(0, 0, 0, 0.07)" }}>
-//                             <CardContent>
-//                                 <Typography sx={{fontSize: 14}}color="text.secondary">
-//                                     School project
-//                                 </Typography>
-//                                 <Typography variant="h5">
-//                                     Doran's Inn: An E-Commerce Platform
-//                                 </Typography>
-//                                 <Typography variant="body1">
-//                                     A web app that simulates the purchasing process on an e-commerce shopping platform. Utilizes Flask to build a microservice architecture and a message-oriented middleware, RabbitMQ.
-//                                 </Typography>
-//                                 <div className="project-card-badges" style={{ display: "flex", justifyContent: "space-between" }}>
-//                                     <div className="skill-badges">
-//                                         <SkillBadge icon={<FaPython size="1rem" />} text="Python" />
-//                                         <SkillBadge icon={<GrMysql size="1rem" />} text="MySQL" />
-//                                         <SkillBadge icon={<SiRabbitmq size="1rem" />} text="RabbitMQ" />
-//                                         <SkillBadge icon={<SiJinja size="1rem" />} text="Jinja" />
-//                                     </div>
-//                                     <div>
-//                                         <FaGithub onClick={() => window.open("https://www.github.com/jonjonnyjonjon", "_blank")} style={{ "cursor": "pointer" }}/>
-//                                     </div>
-//                                 </div>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                 </Grid>
+				<Stack>
+					<CardBody>
+						<Heading>League of Legends e-commerce site</Heading>
 
-//                 <Grid container className="project-card">
-//                     <Grid item xs={12} md={5}>
-//                         <img src={Antbuildz} alt="Antbuildz logo"/>
-//                     </Grid>
-//                     <Grid item xs={12} md={7}>
-//                         <Card style={{ boxShadow: "12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 100px 100px 80px rgba(0, 0, 0, 0.07)" }}>
-//                             <CardContent>
-//                                 <Typography sx={{fontSize: 14}} color="text.secondary">
-//                                     School project
-//                                 </Typography>
-//                                 <Typography variant="h5">
-//                                     Antbuilz: A Bidding Platform
-//                                 </Typography>
-//                                 <Typography variant="body1">
-//                                     A web app for the construction industry to rent and loan industrial equipment. Search for your wanted equipment and place your desired bids on them. 
-//                                 </Typography>
+						<Text py="2">
+							A web app that simulates the purchasing process on an e-commerce
+							shopping platform. Utilizes Flask to build a microservice
+							architecture and a message-oriented middleware, RabbitMQ.
+						</Text>
+					</CardBody>
 
-//                                 <div className="project-card-badges">
-//                                     <div>
-//                                         <SkillBadge icon={<FaJava size="1rem" />} text="Java" />
-//                                         <SkillBadge icon={<SiSpringboot size="1rem" />} text="Springboot" />
-//                                         <SkillBadge icon={<SiHibernate size="1rem" />} text="Hibernate" />
-//                                         <SkillBadge icon={<SiApachemaven size="1rem" />} text="Maven" />
-//                                         <SkillBadge icon={<SiThymeleaf size="1rem" />} text="Thymeleaf" />
-//                                         <SkillBadge icon={<GrMysql size="1rem" />} text="MySQL" />
-//                                     </div>
-//                                     <div>
-//                                         <FaGithub onClick={() => window.open("https://www.github.com/jonjonnyjonjon", "_blank")} style={{ "cursor": "pointer" }}/>
-//                                     </div>
-//                                 </div>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                 </Grid>
+					<CardFooter>
+						<Stack direction="row">
+							<SkillBadge icon={<FaPython size="1rem" />} text="Python" />
+							<SkillBadge icon={<GrMysql size="1rem" />} text="MySQL" />
+							<SkillBadge icon={<SiRabbitmq size="1rem" />} text="RabbitMQ" />
+							<SkillBadge icon={<SiJinja size="1rem" />} text="Jinja" />
+							<FaGithub />
+						</Stack>
+					</CardFooter>
+				</Stack>
+			</Card>
 
-//             </div>
-//         </section>
-//     )
-// }
+			<Card
+				direction={{ base: "column", sm: "row" }}
+				overflow="hidden"
+				variant="outline"
+			>
+				<Image
+					objectFit="cover"
+					maxW={{ base: "100%", sm: "200px" }}
+					src={Antbuildz}
+					alt="Antbuildz"
+				/>
 
-// export default Projects
+				<Stack>
+					<CardBody>
+						<Heading>Antbuilz: A Bidding Platform</Heading>
+
+						<Text py="2">
+							A web app for the construction industry to rent and loan
+							industrial equipment. Search for your wanted equipment and place
+							your desired bids on them.
+						</Text>
+					</CardBody>
+
+					<CardFooter>
+						<Stack direction="row">
+							<SkillBadge icon={<FaJava size="1rem" />} text="Java" />
+							<SkillBadge
+								icon={<SiSpringboot size="1rem" />}
+								text="Springboot"
+							/>
+							<SkillBadge icon={<SiHibernate size="1rem" />} text="Hibernate" />
+							<SkillBadge icon={<SiApachemaven size="1rem" />} text="Maven" />
+							<SkillBadge icon={<SiThymeleaf size="1rem" />} text="Thymeleaf" />
+							<SkillBadge icon={<GrMysql size="1rem" />} text="MySQL" />
+							<FaGithub />
+						</Stack>
+					</CardFooter>
+				</Stack>
+			</Card>
+		</Box>
+	);
+};
+
+export default Projects;

@@ -2,6 +2,7 @@ const badgeStyle = {
     borderRadius: "5px",
     width: "fit-content",
     backgroundColor: "#EDF2F7",
+    color: "black",
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",

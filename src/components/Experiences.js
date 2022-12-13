@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, useColorModeValue } from "@chakra-ui/react";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import TimelineElement from "./TimelineElement";
@@ -30,7 +30,7 @@ const items = [
 		image: AccentureLogo,
 		title: "Software Engineer Intern",
 		country: "Singapore",
-		duration: "May 2022 - Aug 2022",
+		duration: "Jan 2023 - Apr 2023",
 		description: "Lorem Ipsum",
 		bgColor: "#9708FE",
 		accentColor: "white",
@@ -47,12 +47,14 @@ const items = [
 ];
 
 const Experiences = () => {
+	const bg = useColorModeValue("white", "#1A2E3F");
+
 	return (
-		<Box h="fit-content" bg="gray" p={5}>
+		<Box h="fit-content" bg={bg} p={5}>
 			<Heading>Experiences</Heading>
 			<VerticalTimeline h="50vh">
 				{items.map((item) => {
-					return <TimelineElement key={item.title} item={item} />;
+					return <TimelineElement key={item.title + item.duration} item={item} />;
 				})}
 			</VerticalTimeline>
 		</Box>
