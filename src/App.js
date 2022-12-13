@@ -2,14 +2,15 @@
 // import { Container } from "@mui/material";
 
 // import { useState } from "react";
-import Navbar from "./components/Navbar"
-import Intro from "./components/Intro"
-import Skills from "./components/Skills"
-import Projects from "./components/Projects"
-import AboutMe from "./components/AboutMe"
+import Navbar from "./components/Navbar";
+import Intro from "./components/Intro";
+import Experiences from "./components/Experiences";
+import Projects from "./components/Projects";
+import AboutMe from "./components/AboutMe";
 
-import { useEffect, useState } from "react"
-import { PacmanLoader } from "react-spinners"
+import { useEffect, useState } from "react";
+import { PacmanLoader } from "react-spinners";
+import { Box, extendTheme } from "@chakra-ui/react";
 
 // const editorBoxStyle = {
 // 	"border": "5px solid black",
@@ -30,15 +31,15 @@ const App = () => {
 	// 	iframe.src = "data:text/html;charset=utf-8," + encodeURI(html)
 	// }
 	const [fadeProp, setFadeProp] = useState({ fade: "fade-in" });
-	const [loadingPosition, setLoadingPosition] = useState(10000)
+	const [loadingPosition, setLoadingPosition] = useState(10000);
 
 	useEffect(() => {
 		setInterval(() => {
 			if (fadeProp.fade === "fade-in") {
-				setFadeProp({ fade: "fade-out" })
+				setFadeProp({ fade: "fade-out" });
 			}
-		}, 2000)
-	}, [fadeProp])
+		}, 2000);
+	}, [fadeProp]);
 
 	let loaderWrapperStyle = {
 		width: "100%",
@@ -51,29 +52,29 @@ const App = () => {
 		justifyContent: "center",
 		alignItems: "center",
 		zIndex: loadingPosition,
-        overflow: "hidden"
-	}
+		overflow: "hidden",
+	};
 
 	const moveBehind = () => {
-		setLoadingPosition(-1)
-	}
+		setLoadingPosition(-1);
+	};
 
 	return (
-		<div>
-			<div className={fadeProp.fade} style={loaderWrapperStyle} onTransitionEnd={moveBehind}>
+		<Box>
+			{/* <div
+				className={fadeProp.fade}
+				style={loaderWrapperStyle}
+				onTransitionEnd={moveBehind}
+			>
 				<PacmanLoader color={"#FFFF00"} size={50} />
-			</div>
+			</div> */}
 
 			<Navbar />
 			<Intro />
-
-            <hr className="divider-line"/>
-            <AboutMe />
-            <hr className="divider-line"/>
-			<Skills />
-
-            <hr className="divider-line"/>
-			<Projects />
+			<AboutMe />
+			<Experiences />
+			{/*
+			<Projects /> */}
 
 			{/* <Grid container spacing={2} sx={{mt: 1, mb: 1}}>
 				<Grid item sm={6}>
@@ -86,8 +87,8 @@ const App = () => {
 				</Grid>
 			</Grid>
 			<Button variant="contained" onClick={runCode}>Run</Button> */}
-		</div>
+		</Box>
 	);
-}
+};
 
-export default App
+export default App;

@@ -1,24 +1,24 @@
 const InfoTerminal = () => {
-    return (
-        <div class="terminal">
-            <div class="header">
-                <div class="btn red"></div>
-                <div class="btn yellow"></div>
-                <div class="btn green"></div>
-            </div>
-        
-            <div class="field">
-                <code>
-                    &gt;&gt;&gt; Residence <br/>
-                    Singapore <br/> <br/>
-                    &gt;&gt;&gt; Education <br/>
-                    Singapore Management University <br/> <br/>
-                    &gt;&gt;&gt; Hobbies <br/>
-                    Unhealthy amounts of TikTok scroll time
-                </code>
-            </div>
-        </div>
-    )
-}
+	return (
+		<div className="terminal">
+			<div className="header">
+				<div className="btn red"></div>
+				<div className="btn yellow"></div>
+				<div className="btn green"></div>
+			</div>
 
-export default InfoTerminal
+			<div className="field">
+				<code>
+					&gt;&gt;&gt; Residence <br />
+					Singapore <br /> <br />
+					&gt;&gt;&gt; Education <br />
+					Singapore Management University <br /> <br />
+					&gt;&gt;&gt; Hobbies <br />
+					Unhealthy amounts of TikTok scroll time
+				</code>
+			</div>
+		</div>
+	);
+};
+
+export default InfoTerminal;
