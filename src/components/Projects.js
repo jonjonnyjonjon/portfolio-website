@@ -1,33 +1,56 @@
-import { FaPython, FaJava, FaGithub } from "react-icons/fa";
-import { GrMysql } from "react-icons/gr";
-import {
-  SiSpringboot,
-	SiHibernate,
-	SiApachemaven,
-	SiThymeleaf,
-	SiRabbitmq,
-	SiJinja,
-} from "react-icons/si";
+// import { FaPython, FaJava, FaGithub } from "react-icons/fa";
+// import { GrMysql } from "react-icons/gr";
+// import {
+//   SiSpringboot,
+// 	SiHibernate,
+// 	SiApachemaven,
+// 	SiThymeleaf,
+// 	SiRabbitmq,
+// 	SiJinja,
+// } from "react-icons/si";
 import {
   Box,
-	Card,
-	CardBody,
-	CardFooter,
+	// Card,
+	// CardBody,
+	// CardFooter,
+	Grid,
 	Heading,
 	Image,
-	Stack,
-	Text,
+	// Stack,
+	// Text,
+	useColorModeValue,
 } from "@chakra-ui/react";
-import SkillBadge from "./SkillBadge";
+// import SkillBadge from "./SkillBadge";
 import DoransInn from "../images/dorans-inn.png";
 import Antbuildz from "../images/antbuildz.png";
 
 const Projects = () => {
+	const bg = useColorModeValue(
+		"white",
+		"linear-gradient(to top, #193041, #1f2332, #1d1922, #140e13, #000000);"
+	);
+
 	return (
-		<Box h="50vh" p={5}>
+		<Box h="100vh" px="100px" bg={bg}>
 			<Heading mb={5}>Projects</Heading>
 
-			<Card
+			<Grid templateColumns="repeat(5, 1fr)" gap={6}>
+				<Image
+					objectFit="cover"
+					// maxW={{ base: "100%", sm: "200px" }}
+					src={DoransInn}
+					alt="Doran's Inn"
+				/>
+
+				<Image
+					objectFit="cover"
+					// maxW={{ base: "100%", sm: "200px" }}
+					src={Antbuildz}
+					alt="Antbuildz"
+				/>
+			</Grid>
+			<Heading>WIP</Heading>
+			{/* <Card
 				direction={{ base: "column", sm: "row" }}
 				overflow="hidden"
 				variant="outline"
@@ -100,7 +123,7 @@ const Projects = () => {
 						</Stack>
 					</CardFooter>
 				</Stack>
-			</Card>
+			</Card> */}
 		</Box>
 	);
 };

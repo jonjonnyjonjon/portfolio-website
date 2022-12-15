@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import Experiences from "./components/Experiences";
 import Projects from "./components/Projects";
-import AboutMe from "./components/AboutMe";
 
 // import { useEffect, useState } from "react";
 // import { PacmanLoader } from "react-spinners";
@@ -51,7 +50,6 @@ const App = () => {
 
 			<Navbar />
 			<Intro />
-			<AboutMe />
 			<Experiences />
 			<Projects />
 		</Box>
