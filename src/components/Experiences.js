@@ -46,9 +46,9 @@ const items = [
 		country: "Singapore",
 		duration: "May 2022 - Aug 2022",
 		description: [
-			"Optimised the user workflow on Cookie Management Platform by making several UI changes and fixing bugs, improving the usability and user experience of the application",
-			"Developed a Chrome Extension to monitor and record network logs and cookies, allowing developers to analyse network data of pages and ensure privacy compliance",
-			"Initiated and documented key workflow procedures for project setup, user and troubleshooting guides in projects, allowing for a more efficient handover process for newcomers",
+			"Optimised user workflow for better user experience on Cookie Management Platform",
+			"Developed a Chrome Extension to monitor and record network logs and cookies",
+			"Documented key project procedures for setup, user and troubleshooting guides",
 		],
 		bgColor: "black",
 		accentColor: "white",
@@ -59,9 +59,9 @@ const items = [
 		country: "Singapore",
 		duration: "Jun 2020 - Aug 2020",
 		description: [
-			"Developed scripts for data generation using Excel VBA and Power Query to reduce processing time by 40%",
+			"Developed scripts for data generation using Excel VBA and Power Query",
 			"Introduced Microsoft Power Automate to improve efficiency in uploading tasks on Microsoft SharePoint",
-			"Proposed and reworked on report generation process flows by using Microsoft Power Automate and Excel Macro to reduce manual processing by more than 50%",
+			"Proposed and reworked on report generation process flows by using Microsoft Power Automate and Excel Macro",
 		],
 		bgColor: "#FF9900",
 		accentColor: "black",
@@ -95,21 +95,39 @@ function ExpCard({ item }) {
 			variants={cardVariants}
 			mb={10}
 			borderRadius="lg"
-			p={10}
+			p={5}
 		>
 			<HStack align="left">
 				<VStack align="left" justify="center" w="40%">
-					<Image src={item.image} alt="" w="20%" />
-					<Heading sx={{ color: `${item.accentColor} !important` }}>
+					<Image src={item.image} alt="" w="40%" />
+					<Heading
+						fontSize={{ base: "14px" }}
+						sx={{ color: `${item.accentColor} !important` }}
+					>
 						{item.title}
 					</Heading>
-					<Text color={item.accentColor}>{item.country}</Text>
-					<Text color={item.accentColor}>{item.duration}</Text>
+					<Text
+						fontSize={{ base: "11px", md: "20px" }}
+						color={item.accentColor}
+					>
+						{item.country}
+					</Text>
+					<Text
+						fontSize={{ base: "11px", md: "20px" }}
+						color={item.accentColor}
+					>
+						{item.duration}
+					</Text>
 				</VStack>
 
-				<UnorderedList spacing={3} color={item.accentColor} w="60%">
+				<UnorderedList
+					spacing={3}
+					color={item.accentColor}
+					w="60%"
+					fontSize={{ base: "11px", md: "20px" }}
+				>
 					{item.description.map((item) => (
-						<ListItem>{item}</ListItem>
+						<ListItem key={item}>{item}</ListItem>
 					))}
 				</UnorderedList>
 			</HStack>
@@ -123,7 +141,18 @@ const Experiences = () => {
 		"linear-gradient(to bottom, #193041, #1f2332, #1d1922, #140e13, #000000);"
 	);
 	return (
-		<Box h="fit-content" bg={bg} py="50px" px="100px">
+		<Box
+			bg={bg}
+			px="50px"
+			pb="1px" // else got gap
+			id="experiences"
+			_before={{
+				content: "''",
+				height: "100px",
+				visibility: "hidden",
+				display: "block",
+			}}
+		>
 			<Heading mb={5}>Experiences</Heading>
 			{/* <VerticalTimeline h="50vh">
 				{items.map((item) => {
@@ -136,7 +165,6 @@ const Experiences = () => {
 			{items.map((item) => (
 				<ExpCard key={item.name + item.duration} item={item} />
 			))}
-
 		</Box>
 	);
 };

@@ -9,20 +9,26 @@
 // 	SiJinja,
 // } from "react-icons/si";
 import {
-  Box,
+	Box,
 	// Card,
 	// CardBody,
 	// CardFooter,
 	Grid,
 	Heading,
+	HStack,
+	Icon,
 	Image,
+	SimpleGrid,
+	Text,
 	// Stack,
 	// Text,
 	useColorModeValue,
+	VStack,
 } from "@chakra-ui/react";
 // import SkillBadge from "./SkillBadge";
 import DoransInn from "../images/dorans-inn.png";
 import Antbuildz from "../images/antbuildz.png";
+import { BsArrowUpRightSquare } from "react-icons/bs";
 
 const Projects = () => {
 	const bg = useColorModeValue(
@@ -31,25 +37,64 @@ const Projects = () => {
 	);
 
 	return (
-		<Box h="100vh" px="100px" bg={bg}>
+		<Box
+			h="50vh"
+			px="50px"
+			bg={bg}
+			id="projects"
+			_before={{
+				content: "''",
+				height: "100px",
+				visibility: "hidden",
+				display: "block",
+			}}
+		>
 			<Heading mb={5}>Projects</Heading>
 
-			<Grid templateColumns="repeat(5, 1fr)" gap={6}>
-				<Image
-					objectFit="cover"
-					// maxW={{ base: "100%", sm: "200px" }}
-					src={DoransInn}
-					alt="Doran's Inn"
-				/>
-
-				<Image
-					objectFit="cover"
-					// maxW={{ base: "100%", sm: "200px" }}
-					src={Antbuildz}
-					alt="Antbuildz"
-				/>
-			</Grid>
-			<Heading>WIP</Heading>
+			<SimpleGrid
+				columns={{ sm: 1, md: 2 }}
+				spacing="40px"
+				minChildWidth="120px"
+			>
+				<VStack align="left">
+					<Image
+						minW={{ base: "100%", sm: "300px" }}
+						src={DoransInn}
+						alt="Doran's Inn"
+						borderRadius="2xl"
+					/>
+					<Heading fontSize="24px">
+						League of Legends e-commerce website
+					</Heading>
+					<HStack spacing={5} justify="space-between">
+						<Text fontSize={{ base: "11px", md: "20px" }}>
+							A web app that simulates the purchasing process on an e-commerce
+							shopping platform. Utilizes Flask to build a microservice
+							architecture and a message-oriented middleware, RabbitMQ.
+						</Text>
+						<Icon as={BsArrowUpRightSquare} />
+					</HStack>
+				</VStack>
+				<VStack align="left">
+					<Image
+						minW={{ base: "100%", sm: "300px" }}
+						src={Antbuildz}
+						alt="Antbuildz"
+						borderRadius="2xl"
+					/>
+					<Heading fontSize="24px">
+						Bidding Platform for Construction Vehicles
+					</Heading>
+					<HStack spacing={5} justify="space-between">
+						<Text fontSize={{ base: "11px", md: "20px" }}>
+							A web app for the construction industry to rent and loan
+							industrial equipment. Search for your wanted equipment and place
+							your desired bids on them.
+						</Text>
+						<Icon as={BsArrowUpRightSquare} />
+					</HStack>
+				</VStack>
+			</SimpleGrid>
 			{/* <Card
 				direction={{ base: "column", sm: "row" }}
 				overflow="hidden"

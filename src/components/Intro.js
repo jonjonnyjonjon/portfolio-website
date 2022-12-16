@@ -1,6 +1,8 @@
 import {
 	Avatar,
 	Center,
+	Flex,
+	Heading,
 	HStack,
 	Text,
 	useColorModeValue,
@@ -10,26 +12,24 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import PixelAvatar from "../images/pixel_me.png";
 
-const Intro = () => {
-	const bg = useColorModeValue(
-		"white",
-		"linear-gradient(to top, #193041, #1f2332, #1d1922, #140e13, #000000);"
-	);
-
+const IntroContent = () => {
 	return (
-		<HStack align="center" justify="center" minH="calc(100vh - 60px)" bg={bg}>
+		<>
 			<Center>
-				<Avatar size="2xl" src={PixelAvatar} />
+				<Avatar size={["2xl", "full"]} src={PixelAvatar} />
 			</Center>
 			<VStack w="40%" align="left">
-				<Text>Hello, 你好 👋</Text>
-				<Text w="fit-content">
-					I am Jonathan, an aspiring Software Engineer and a Web Developer
+				<Heading fontSize={[24, null, 64]}>Hello 👋</Heading>
+				<Text w="fit-content" fontSize={[14, null, 32]}>
+					I am Jonathan, living in Singapore.
+				</Text>
+				<Text w="fit-content" fontSize={[14, null, 32]}>
+					A University student and an aspiring Software Engineer
 				</Text>
 			</VStack>
-			<div className="social-media-icons">
+			<HStack>
 				<FaGithub
-					size={40}
+					size={20}
 					onClick={() =>
 						window.open("https://www.github.com/jonjonnyjonjon", "_blank")
 					}
@@ -37,7 +37,7 @@ const Intro = () => {
 					fontSize="large"
 				/>
 				<FaLinkedin
-					size={40}
+					size={20}
 					onClick={() =>
 						window.open("https://www.linkedin.com/in/jonathan-htwong", "_blank")
 					}
@@ -45,15 +45,35 @@ const Intro = () => {
 					fontSize="large"
 				/>
 				<MdEmail
-					size={40}
+					size={20}
 					onClick={() =>
 						window.open("mailto:jonathanwong99@gmail.com", "_blank")
 					}
 					style={{ cursor: "pointer" }}
 					fontSize="large"
 				/>
-			</div>
-		</HStack>
+			</HStack>
+		</>
+	);
+}
+
+const Intro = () => {
+	const bg = useColorModeValue(
+		"white",
+		"linear-gradient(to top, #193041, #1f2332, #1d1922, #140e13, #000000);"
+	);
+
+	return (
+		<Flex
+			gap={5}
+			align="center"
+			justify="center"
+			minH="calc(100vh - 60px)"
+			bg={bg}
+			direction={{ base: "column", md: "row" }}
+		>
+			<IntroContent />
+		</Flex>
 	);
 };
 

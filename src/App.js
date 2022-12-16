@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 // import { useEffect, useState } from "react";
 // import { PacmanLoader } from "react-spinners";
 import { Box } from "@chakra-ui/react";
+import Footer from "./components/Footer";
 
 const App = () => {
 	// const [fadeProp, setFadeProp] = useState({ fade: "fade-in" });
@@ -52,6 +53,7 @@ const App = () => {
 			<Intro />
 			<Experiences />
 			<Projects />
+			<Footer />
 		</Box>
 	);
 };
