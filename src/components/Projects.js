@@ -13,7 +13,6 @@ import {
 	// Card,
 	// CardBody,
 	// CardFooter,
-	Grid,
 	Heading,
 	HStack,
 	Icon,
