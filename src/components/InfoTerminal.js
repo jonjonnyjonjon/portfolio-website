@@ -8,7 +8,7 @@ const InfoTerminal = () => {
 			</div>
 
 			<div className="field">
-				<code>
+				<code className="text-lg">
 					&gt;&gt;&gt; Residence <br />
 					Singapore <br /> <br />
 					&gt;&gt;&gt; Education <br />

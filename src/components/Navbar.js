@@ -1,255 +1,91 @@
-import {
-	Box,
-	Button,
-	Flex,
-	Text,
-	IconButton,
-	Stack,
-	Collapse,
-	Icon,
-	Link,
-	Popover,
-	PopoverTrigger,
-	PopoverContent,
-	useColorMode,
-	useColorModeValue,
-	useBreakpointValue,
-	useDisclosure,
-} from "@chakra-ui/react";
-import {
-	HamburgerIcon,
-	CloseIcon,
-	ChevronDownIcon,
-	ChevronRightIcon,
-	MoonIcon,
-	SunIcon,
-} from "@chakra-ui/icons";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import JLogo from "../images/j-logo.png"
 
-export default function WithSubnavigation() {
-	const { isOpen, onToggle } = useDisclosure();
-	const { colorMode, toggleColorMode } = useColorMode();
-	
-	return (
-		<Box>
-			<Flex
-				bg={useColorModeValue("white", "gray.800")}
-				color={useColorModeValue("gray.600", "white")}
-				minH={"60px"}
-				py={{ base: 2 }}
-				px={{ base: 4 }}
-				borderBottom={1}
-				borderStyle={"solid"}
-				borderColor={useColorModeValue("gray.200", "gray.900")}
-				align={"center"}
-				position="fixed"
-				w="100%"
-			>
-				<Flex
-					flex={{ base: 1, md: "auto" }}
-					ml={{ base: -2 }}
-					display={{ base: "flex", md: "none" }}
-				>
-					<IconButton
-						onClick={onToggle}
-						icon={
-							isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-						}
-						variant={"ghost"}
-						aria-label={"Toggle Navigation"}
-					/>
-				</Flex>
-				<Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-					<Text
-						textAlign={useBreakpointValue({ base: "center", md: "left" })}
-						fontFamily={"'Yellowtail', cursive"}
-						color={useColorModeValue("gray.800", "white")}
-					>
-						Jon Wong
-					</Text>
-				</Flex>
 
-				<Stack
-					flex={{ base: 1, md: 0 }}
-					justify={"flex-end"}
-					direction={"row"}
-					spacing={6}
-				>
-					<Button onClick={toggleColorMode}>
-						{colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-					</Button>
-					<Flex display={{ base: "none", md: "flex" }} ml={10}>
-						<DesktopNav />
-					</Flex>
-				</Stack>
-			</Flex>
+const navigation = [
+	{ name: "About Me", href: "#aboutMe", current: true },
+	{ name: "Experiences", href: "#experiences", current: false },
+	{ name: "Projects", href: "#projects", current: false },
+	{ name: "Contact Me", href: "#contactMe", current: false },
+];
 
-			<Collapse in={isOpen} animateOpacity>
-				<MobileNav />
-			</Collapse>
-		</Box>
-	);
+function classNames(...classes) {
+	return classes.filter(Boolean).join(" ");
 }
 
-const DesktopNav = () => {
-	const linkColor = useColorModeValue("gray.600", "gray.200");
-	const linkHoverColor = useColorModeValue("gray.800", "white");
-	const popoverContentBgColor = useColorModeValue("white", "gray.800");
-
+export default function Navbar() {
 	return (
-		<Stack direction={"row"} spacing={4}>
-			{NAV_ITEMS.map((navItem) => (
-				<Box key={navItem.label}>
-					<Popover trigger={"hover"} placement={"bottom-start"}>
-						<PopoverTrigger>
-							<Link
-								p={2}
-								href={navItem.href ?? "#"}
-								fontSize={"sm"}
-								fontWeight={500}
-								color={linkColor}
-								_hover={{
-									textDecoration: "none",
-									color: linkHoverColor,
-								}}
-							>
-								{navItem.label}
-							</Link>
-						</PopoverTrigger>
+		<Disclosure as="nav" className="bg-gray-800">
+			{({ open }) => (
+				<>
+					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+						<div className="relative flex h-16 items-center justify-between">
+							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+								{/* Mobile menu button*/}
+								<Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+									<span className="absolute -inset-0.5" />
+									<span className="sr-only">Open main menu</span>
+									{open ? (
+										<XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+									) : (
+										<Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+									)}
+								</Disclosure.Button>
+							</div>
+							<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+								<div className="flex flex-shrink-0 items-center">
+									<img
+										className="h-8 w-auto"
+										src={JLogo}
+										alt="JLogo"
+									/>
+								</div>
+								<div className="hidden sm:ml-6 sm:block">
+									<div className="flex space-x-4">
+										{navigation.map((item) => (
+											<a
+												key={item.name}
+												href={item.href}
+												className={classNames(
+													item.current
+														? "bg-gray-900 text-white"
+														: "text-gray-300 hover:bg-gray-700 hover:text-white",
+													"rounded-md px-3 py-2 text-sm font-medium"
+												)}
+												aria-current={item.current ? "page" : undefined}
+											>
+												{item.name}
+											</a>
+										))}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-						{navItem.children && (
-							<PopoverContent
-								border={0}
-								boxShadow={"xl"}
-								bg={popoverContentBgColor}
-								p={4}
-								rounded={"xl"}
-								minW={"sm"}
-							>
-								<Stack>
-									{navItem.children.map((child) => (
-										<DesktopSubNav key={child.label} {...child} />
-									))}
-								</Stack>
-							</PopoverContent>
-						)}
-					</Popover>
-				</Box>
-			))}
-		</Stack>
+					<Disclosure.Panel className="sm:hidden">
+						<div className="space-y-1 px-2 pb-3 pt-2">
+							{navigation.map((item) => (
+								<Disclosure.Button
+									key={item.name}
+									as="a"
+									href={item.href}
+									className={classNames(
+										item.current
+											? "bg-gray-900 text-white"
+											: "text-gray-300 hover:bg-gray-700 hover:text-white",
+										"block rounded-md px-3 py-2 text-base font-medium"
+									)}
+									aria-current={item.current ? "page" : undefined}
+								>
+									{item.name}
+								</Disclosure.Button>
+							))}
+						</div>
+					</Disclosure.Panel>
+				</>
+			)}
+		</Disclosure>
 	);
-};
-
-const DesktopSubNav = ({ label, href, subLabel }) => {
-	return (
-		<Link
-			href={href}
-			role={"group"}
-			display={"block"}
-			p={2}
-			rounded={"md"}
-			_hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-		>
-			<Stack direction={"row"} align={"center"}>
-				<Box>
-					<Text
-						transition={"all .3s ease"}
-						_groupHover={{ color: "pink.400" }}
-						fontWeight={500}
-					>
-						{label}
-					</Text>
-					<Text fontSize={"sm"}>{subLabel}</Text>
-				</Box>
-				<Flex
-					transition={"all .3s ease"}
-					transform={"translateX(-10px)"}
-					opacity={0}
-					_groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-					justify={"flex-end"}
-					align={"center"}
-					flex={1}
-				>
-					<Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-				</Flex>
-			</Stack>
-		</Link>
-	);
-};
-
-const MobileNav = () => {
-	return (
-		<Stack
-			bg={useColorModeValue("white", "gray.800")}
-			p={4}
-			display={{ md: "none" }}
-		>
-			{NAV_ITEMS.map((navItem) => (
-				<MobileNavItem key={navItem.label} {...navItem} />
-			))}
-		</Stack>
-	);
-};
-
-const MobileNavItem = ({ label, children, href }) => {
-	const { isOpen, onToggle } = useDisclosure();
-
-	return (
-		<Stack spacing={4} onClick={children && onToggle}>
-			<Flex
-				py={2}
-				as={Link}
-				href={href ?? "#"}
-				justify={"space-between"}
-				align={"center"}
-				_hover={{
-					textDecoration: "none",
-				}}
-			>
-				<Text
-					fontWeight={600}
-					color={useColorModeValue("gray.600", "gray.200")}
-				>
-					{label}
-				</Text>
-				{children && (
-					<Icon
-						as={ChevronDownIcon}
-						transition={"all .25s ease-in-out"}
-						transform={isOpen ? "rotate(180deg)" : ""}
-						w={6}
-						h={6}
-					/>
-				)}
-			</Flex>
-
-			<Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-				<Stack
-					mt={2}
-					pl={4}
-					borderLeft={1}
-					borderStyle={"solid"}
-					borderColor={useColorModeValue("gray.200", "gray.700")}
-					align={"start"}
-				>
-					{children &&
-						children.map((child) => (
-							<Link key={child.label} py={2} href={child.href}>
-								{child.label}
-							</Link>
-						))}
-				</Stack>
-			</Collapse>
-		</Stack>
-	);
-};
-
-const NAV_ITEMS = [
-	{
-		label: "Experiences",
-		href: "#experiences",
-	},
-	{
-		label: "Projects",
-		href: "#projects",
-	},
-];
+}
