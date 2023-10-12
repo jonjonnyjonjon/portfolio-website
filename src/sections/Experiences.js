@@ -65,7 +65,7 @@ const Experiences = () => {
 						<p className="mb-4 text-base font-normal text-gray-400">
 							<ul className="list-none">
 								{item.description.map((point) => (
-									<li className="before:content-['\2022'] before:text-white-700 before:inline-block before:w-3">
+									<li className="before:content-['•'] before:text-white-700 before:inline-block before:w-3">
 										{point}
 									</li>
 								))}
