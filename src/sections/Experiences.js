@@ -47,22 +47,25 @@ const items = [
 
 const Experiences = () => {
 	return (
-		<div className="mx-auto max-w-2xl p-12 md:py-32" id="experiences">
+		<div
+			className="mx-auto max-w-2xl p-12 scroll-mt-[64px] md:py-32"
+			id="experiences"
+		>
 			<p className="text-3xl font-bold pb-12">Experiences</p>
 
-			<ol className="relative border-l-4 border-gray-200 dark:border-gray-700">
+			<ol className="relative border-l-4 border-[#DCD9D4] dark:border-gray-200 dark:border-gray-700">
 				{items.map((item) => (
 					<li className="mb-10 ml-10" key={item.company}>
 						<span className="absolute flex items-center justify-center w-14 h-14 bg-white rounded-full -left-8 ">
 							<img src={item.logo} alt="logo" width="40px" height="40px" />
 						</span>
-						<h3 className="flex items-center mb-1 text-lg font-semibold text-white">
+						<h3 className="flex items-center mb-1 text-lg font-semibold">
 							{item.title}
 						</h3>
-						<time className="block mb-2 text-sm font-normal leading-none text-gray-500">
+						<time className="block mb-2 text-sm font-normal leading-none text-gray-400">
 							{item.duration}
 						</time>
-						<div className="mb-4 text-base font-normal text-gray-400">
+						<div className="mb-4 text-base font-normal text-gray-600 dark:text-white">
 							<ul className="list-none">
 								{item.description.map((point, index) => (
 									<li

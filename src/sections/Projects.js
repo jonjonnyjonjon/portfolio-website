@@ -60,10 +60,13 @@ const projects = [
 
 const Projects = () => {
 	return (
-		<div className="mx-auto max-w-5xl p-12 md:py-32" id="projects">
+		<div
+			className="mx-auto max-w-5xl p-12 scroll-mt-[64px] md:py-32"
+			id="projects"
+		>
 			<p className="text-3xl font-bold pb-12">Projects</p>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<div className="grid grid-cols-1 place-items-center md:place-items-stretch md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{projects.map((project) => (
 					<ProjectCard key={project.name} project={project} />
 				))}

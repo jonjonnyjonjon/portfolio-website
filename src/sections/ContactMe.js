@@ -1,6 +1,9 @@
 export default function ContactMe() {
 	return (
-		<div className="mx-auto max-w-2xl p-12 md:py-32" id="contactMe">
+		<div
+			className="mx-auto max-w-2xl p-12 scroll-mt-[64px] md:py-32"
+			id="contactMe"
+		>
 			<p className="text-3xl font-bold pb-12">Curious to find out more?</p>
 
 			<div className="flex gap-5 items-center">

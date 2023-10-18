@@ -8,7 +8,7 @@ import Footer from "./sections/Footer";
 
 const App = () => {
 	return (
-		<>
+		<div className="bg-[#F3F2F0] text-black dark:bg-[#131316] dark:text-white">
 			<Navbar />
 			<Intro />
 			<AboutMe />
@@ -16,7 +16,7 @@ const App = () => {
 			<Projects />
 			<ContactMe />
 			<Footer />
-		</>
+		</div>
 	);
 };
 
