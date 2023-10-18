@@ -188,3 +188,9 @@ code {
     --image-comparison-slider-width: 90vw;
   }
 }
+
+@media (max-width: 480px) {
+  :root {
+    --image-comparison-slider-width: 50vw;
+  }
+}
