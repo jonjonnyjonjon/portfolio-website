@@ -1,7 +1,7 @@
 import TikTokLogo from "../images/tiktok-logo.svg";
 import ContinentalLogo from "../images/continental-logo.png";
 import AccentureLogo from "../images/accenture-logo.svg";
-import DBSLogo from "../images/dbs-logo.svg";
+import DBSLogo from "../images/dbs-logo.png";
 
 const items = [
 	{
@@ -54,7 +54,7 @@ const Experiences = () => {
 				{items.map((item) => (
 					<li className="mb-10 ml-10" key={item.company}>
 						<span className="absolute flex items-center justify-center w-14 h-14 bg-white rounded-full -left-8 ">
-							<img src={item.logo} alt="logo" width="48px" height="48px" />
+							<img src={item.logo} alt="logo" width="40px" height="40px" />
 						</span>
 						<h3 className="flex items-center mb-1 text-lg font-semibold text-white">
 							{item.title}
@@ -62,15 +62,18 @@ const Experiences = () => {
 						<time className="block mb-2 text-sm font-normal leading-none text-gray-500">
 							{item.duration}
 						</time>
-						<p className="mb-4 text-base font-normal text-gray-400">
+						<div className="mb-4 text-base font-normal text-gray-400">
 							<ul className="list-none">
-								{item.description.map((point) => (
-									<li className="before:content-['•'] before:text-white-700 before:inline-block before:w-3">
+								{item.description.map((point, index) => (
+									<li
+										key={index}
+										className="before:content-['•'] before:text-white-700 before:inline-block before:w-3"
+									>
 										{point}
 									</li>
 								))}
 							</ul>
-						</p>
+						</div>
 					</li>
 				))}
 			</ol>

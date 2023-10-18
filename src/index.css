@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
-/* @tailwind base; */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -100,6 +100,7 @@ code {
   cursor: col-resize;
 }
 #imageComparisonSlider img {
+  max-width: none;
   display: block;
   width: var(--image-comparison-slider-width);
   height: auto;
@@ -120,6 +121,7 @@ code {
   /* transition: 0.25s cubic-bezier(.03,.98,.52,.99); */
 }
 #imageComparisonSlider .imgWrapper img {
+  max-width: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -167,13 +169,13 @@ code {
 #imageComparisonSlider .handleLine {
   width: 2px;
   flex-grow: 1;
-  background-color: #fff;
+  background-color: black;
 }
 #imageComparisonSlider .handleCircle {
   width: var(--image-comparison-slider-handle-width);
   height: var(--image-comparison-slider-handle-width);
-  color: #fff;
-  border: 2px solid #fff;
+  color: black;
+  border: 2px solid black;
   border-radius: 50%;
   display: flex;
   align-items: center;

@@ -1,6 +1,7 @@
 import PixelAvatar from "../images/pixel_me.png";
 import OriginalAvatar from "../images/original_me.jpg";
 import { useEffect } from "react";
+import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 
 const Intro = () => {
 	useEffect(() => {
@@ -73,13 +74,13 @@ const Intro = () => {
 							<img src={OriginalAvatar} alt="before" />
 
 							<div className="imgWrapper">
-								<img src={PixelAvatar} alt="after" />
+								<img src={PixelAvatar} alt="after" className="absolute" />
 							</div>
 							<div className="handle">
 								<div className="handleLine"></div>
 								<div className="handleCircle">
-									<i className="fas fa-chevron-left"></i>
-									<i className="fas fa-chevron-right"></i>
+									<BiSolidLeftArrow />
+									<BiSolidRightArrow />
 								</div>
 								<div className="handleLine"></div>
 							</div>
