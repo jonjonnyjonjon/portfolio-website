@@ -9,12 +9,10 @@ const InfoTerminal = () => {
 
 			<div className="field">
 				<code className="text-lg">
-					&gt;&gt;&gt; Residence <br />
+					{">>>"} Residence <br />
 					Singapore <br /> <br />
-					&gt;&gt;&gt; Education <br />
+					{">>>"} Education <br />
 					Singapore Management University <br /> <br />
-					&gt;&gt;&gt; Hobbies <br />
-					Unhealthy amounts of TikTok scroll time
 				</code>
 			</div>
 		</div>
