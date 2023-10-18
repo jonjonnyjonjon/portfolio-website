@@ -2,7 +2,7 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import JLogo from "../images/j-logo.png";
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
