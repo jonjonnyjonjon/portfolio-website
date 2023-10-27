@@ -17,6 +17,7 @@ export default function ContactMe() {
 					onClick={() =>
 						window.open("https://www.github.com/jonjonnyjonjon", "_blank")
 					}
+					aria-label="GitHub Link"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +37,7 @@ export default function ContactMe() {
 					onClick={() =>
 						window.open("https://www.linkedin.com/in/jonathan-htwong", "_blank")
 					}
+					aria-label="LinkedIn Link"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +57,7 @@ export default function ContactMe() {
 					onClick={() =>
 						window.open("mailto:jonathanwong99@gmail.com", "_blank")
 					}
+					aria-label="Email Me"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

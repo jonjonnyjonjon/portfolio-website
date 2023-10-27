@@ -1,7 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import JLogo from "../images/j-logo.png";
-import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
+import { BsFillSunFill, BsMoonFill, BsFiletypePdf } from "react-icons/bs";
 import { useState } from "react";
 
 function classNames(...classes) {
@@ -88,24 +88,57 @@ export default function Navbar() {
 									</div>
 								</div>
 								<div
-									className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+									className="absolute inset-y-0 right-0 flex items-center gap-5 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
 									id="theme-toggle"
-									onClick={toggleTheme}
 								>
 									{document.documentElement.classList.contains("dark") ? (
-										<button
-											type="button"
-											className="rounded-lg bg-gray-900 p-2  hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-										>
-											<BsFillSunFill className="h-6 w-6" aria-hidden="true" />
-										</button>
+										<>
+											<button
+												type="button"
+												className="flex items-center gap-2 rounded-lg bg-gray-900 p-2  hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+												onClick={() =>
+													window.open(
+														"https://drive.google.com/file/d/1KXWM9ZG6aMBTP5NQl_oRL0v0vxsiqfRv/view?usp=sharing",
+														"_blank"
+													)
+												}
+											>
+												<BsFiletypePdf aria-hidden="true" />
+												Résumé
+											</button>
+											<button
+												type="button"
+												className="rounded-lg bg-gray-900 p-2  hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+												aria-label="Toggle Light Mode"
+												onClick={toggleTheme}
+											>
+												<BsFillSunFill className="h-6 w-6" aria-hidden="true" />
+											</button>
+										</>
 									) : (
-										<button
-											type="button"
-											className="rounded-lg bg-neutral-200 p-2  hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-										>
-											<BsMoonFill className="h-6 w-6" aria-hidden="true" />
-										</button>
+										<>
+											<button
+												type="button"
+												className="flex items-center gap-2 rounded-lg bg-neutral-200 p-2  hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+												onClick={() =>
+													window.open(
+														"https://drive.google.com/file/d/1KXWM9ZG6aMBTP5NQl_oRL0v0vxsiqfRv/view?usp=sharing",
+														"_blank"
+													)
+												}
+											>
+												<BsFiletypePdf aria-hidden="true" />
+												Résumé
+											</button>
+											<button
+												type="button"
+												className="rounded-lg bg-neutral-200 p-2  hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+												aria-label="Toggle Dark Mode"
+												onClick={toggleTheme}
+											>
+												<BsMoonFill className="h-6 w-6" aria-hidden="true" />
+											</button>
+										</>
 									)}
 								</div>
 							</div>

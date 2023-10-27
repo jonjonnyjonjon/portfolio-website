@@ -14,7 +14,8 @@ const projects = [
 			"An automated pipeline that aims to process millions of transactions daily by using Amazon Web Services (AWS).",
 		imgSrc: ITSAUI,
 		sponsor: "Ascenda Loyalty",
-		skills: ["aws", "terraform", ],
+		skills: ["aws", "terraform"],
+		video: "",
 	},
 	{
 		name: "ShopNav AR",
@@ -23,6 +24,7 @@ const projects = [
 		imgSrc: MobileUI,
 		sponsor: "",
 		skills: ["kotlin", "google arcore", "indooratlas", "stripe api"],
+		video: "https://www.youtube.com/watch?v=QO8BzgvmDGk",
 	},
 	{
 		name: "Data Entry Platform",
@@ -31,22 +33,8 @@ const projects = [
 		imgSrc: FYPUI,
 		sponsor: "Sembcorp",
 		skills: ["reactjs", "nodejs", "mysql", "grafana"],
-	},
-	{
-		name: "Doran's Inn",
-		synopsis:
-			"An e-commerce web app that simulates the purchasing and payment process.",
-		imgSrc: DoransInn,
-		sponsor: "",
-		skills: ["jinja2", "flask", "rabbitmq", "sqlalchemy"],
-	},
-	{
-		name: "Bidding Platform",
-		synopsis:
-			"A web app for the construction industry to rent and loan industrial equipment. Search for your wanted equipment and place your desired bids on them.",
-		imgSrc: AntbuildzUI,
-		sponsor: "Antbuildz",
-		skills: ["java", "springboot", "thymeleaf"],
+		video:
+			"https://drive.google.com/file/d/1XWapJvYvnRgOKOUxbrLQ6zPZFr4mAqm5/view?usp=share_link",
 	},
 	{
 		name: "Task Reminder IoT Setup",
@@ -55,6 +43,25 @@ const projects = [
 		imgSrc: CPSArchi,
 		sponsor: "MINDS Singapore",
 		skills: ["reactjs", "firebase", "raspberry pi", "3d printing"],
+		video: "https://www.youtube.com/watch?v=sAv0T6iJzFU",
+	},
+	{
+		name: "Doran's Inn",
+		synopsis:
+			"An e-commerce web app that simulates the purchasing and payment process.",
+		imgSrc: DoransInn,
+		sponsor: "",
+		skills: ["jinja2", "flask", "rabbitmq", "sqlalchemy"],
+		video: "",
+	},
+	{
+		name: "Bidding Platform",
+		synopsis:
+			"A web app for the construction industry to rent and loan industrial equipment. Search for your wanted equipment and place your desired bids on them.",
+		imgSrc: AntbuildzUI,
+		sponsor: "Antbuildz",
+		skills: ["java", "springboot", "thymeleaf"],
+		video: "",
 	},
 ];
 

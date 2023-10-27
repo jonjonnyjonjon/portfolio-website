@@ -62,10 +62,10 @@ const Experiences = () => {
 						<h3 className="flex items-center mb-1 text-lg font-semibold">
 							{item.title}
 						</h3>
-						<time className="block mb-2 text-sm font-normal leading-none text-gray-400">
-							{item.duration}
+						<time className="block mb-2 text-sm font-normal leading-none text-gray-600 dark:text-gray-300">
+							{item.company} | {item.duration}
 						</time>
-						<div className="mb-4 text-base font-normal text-gray-600 dark:text-white">
+						<div className="mb-4 text-base font-normal text-black dark:text-white">
 							<ul className="list-none">
 								{item.description.map((point, index) => (
 									<li
