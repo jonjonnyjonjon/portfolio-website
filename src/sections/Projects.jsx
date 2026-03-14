@@ -6,6 +6,7 @@ import FYPUI from "../images/fyp-screen.png";
 import MobileUI from "../images/mobile-nav.jpg";
 
 import ProjectCard from "../components/ProjectCard";
+import { motion } from "framer-motion";
 
 const projects = [
 	{
@@ -67,18 +68,30 @@ const projects = [
 
 const Projects = () => {
 	return (
-		<div
-			className="mx-auto max-w-5xl p-12 scroll-mt-[64px] md:py-32"
+		<motion.div
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			viewport={{ once: true }}
+			className="mx-auto max-w-7xl px-6 py-20 md:py-32 scroll-mt-[64px]"
 			id="projects"
 		>
-			<p className="text-3xl font-bold pb-12">Projects</p>
+			<motion.h2
+				initial={{ opacity: 0, y: -30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.6 }}
+				className="text-3xl md:text-4xl font-bold mb-12 text-center"
+			>
+				My <span className="text-accent-500">Projects</span>
+			</motion.h2>
 
-			<div className="grid grid-cols-1 place-items-center md:place-items-stretch md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{/* Responsive grid */}
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 				{projects.map((project) => (
 					<ProjectCard key={project.name} project={project} />
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
